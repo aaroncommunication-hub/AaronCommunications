@@ -5,152 +5,311 @@
   <meta name="google-site-verification" content="R0g25NFW89Xhnm6rMPYbEyZ3OMuoh53JwosmuP03daA" />
   <title>Aaron Communications - Contact Us</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0f141a;
-      color: white;
+      background: #f0f2f5;
+      color: #333;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 40px;
     }
 
-    .card {
-      background: #1b1f27;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      max-width: 750px;
+    .container {
+      max-width: 900px;
       width: 100%;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
       animation: fadeIn 1s ease;
     }
 
-    .card-header {
-      padding: 20px;
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      gap: 30px;
+    }
+    
+    .header {
       text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    .card-header h1 {
-      font-size: 2rem;
+    .header h1 {
+      font-size: 2.8rem;
       font-weight: 700;
-      margin-bottom: 5px;
+      color: #1a1a1a;
+      background: -webkit-linear-gradient(45deg, #007bff, #20a0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .card-header p {
-      color: #aaa;
-      font-size: 0.95rem;
+    .header p {
+      color: #888;
+      font-size: 1.1rem;
+      margin-top: 5px;
     }
-
-    .contact-info {
-      padding: 20px;
+    
+    .contact-info-grid {
       display: grid;
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-    .info-row {
+    
+    .info-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: #252b36;
-      padding: 12px 15px;
-      border-radius: 10px;
+      gap: 15px;
+      padding: 20px;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .info-row span {
-      font-size: 1.2rem;
+    .info-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     }
-    .info-row a {
-      color: #4da3ff;
+    
+    .info-item .icon {
+      font-size: 1.8rem;
+      color: #007bff;
+      flex-shrink: 0;
+    }
+    
+    .info-item p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+    }
+    
+    .info-item a {
+      color: #007bff;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
-    .info-row a:hover {
+    
+    .info-item a:hover {
+      color: #0056b3;
       text-decoration: underline;
     }
 
-    /* Cool Services Button */
+    .button-section {
+      text-align: center;
+      margin-top: 10px;
+    }
+    
     .services-btn {
       display: inline-block;
       text-align: center;
-      background: linear-gradient(90deg, #4da3ff, #00ffea);
-      color: #0f141a;
-      padding: 12px 25px;
-      margin: 15px auto 5px auto;
-      font-size: 1rem;
+      background: linear-gradient(45deg, #007bff, #00d2ff);
+      color: white;
+      padding: 14px 35px;
+      font-size: 1.1rem;
       font-weight: 600;
-      border-radius: 30px;
-      box-shadow: 0 4px 20px rgba(0,255,234,0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       text-decoration: none;
     }
+    
     .services-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(0,255,234,0.6);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+      background: linear-gradient(45deg, #0056b3, #00a0ff);
+    }
+
+    /* New section styling for services and products */
+    .services-section {
+      margin-top: 30px;
+      padding: 30px;
+      background: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .services-section h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+    .services-section p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .services-section ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .services-section ul li {
+      font-size: 1rem;
+      color: #333;
+      background: #e9ecef;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+    .services-section .service-contact {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+    .services-section .service-contact a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .services-section .service-contact a:hover {
+      text-decoration: underline;
     }
 
     .map-section {
-      padding: 0 20px 20px 20px;
+      margin-top: 30px;
     }
+    
+    .map-section h2 {
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
     iframe {
       width: 100%;
-      border-radius: 10px;
-      margin-top: 12px;
+      border-radius: 15px;
       border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
+    
     .map-link {
       display: block;
-      margin-top: 8px;
-      text-align: right;
-      font-size: 0.9rem;
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.95rem;
     }
+    
     .map-link a {
-      color: #4da3ff;
+      color: #007bff;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
+    
     .map-link a:hover {
+      color: #0056b3;
       text-decoration: underline;
     }
 
     footer {
-      padding: 12px;
+      padding: 20px;
       text-align: center;
-      font-size: 0.85rem;
-      color: #666;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 20px;
     }
 
-    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+      .main-content {
+        padding: 30px 20px;
+      }
+      .header h1 {
+        font-size: 2.2rem;
+      }
+      .header p {
+        font-size: 1rem;
+      }
+      .contact-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
+  
+  <div class="container">
+    <div class="main-content">
+      
+      <header class="header">
+        <h1>Aaron Communications</h1>
+        <p>Connecting You to the Future</p>
+      </header>
 
-  <div class="card">
-    <div class="card-header">
-      <h1>Aaron Communications</h1>
-      <p>Connecting You to the Future</p>
-    </div>
-
-    <div class="contact-info">
-      <div class="info-row">📍 TC11/352 Keston Road, Near Style Plus, Thiruvananthapuram, Kerala 695003</div>
-      <div class="info-row">📞 <a href="tel:+919895817923">+91 98958 17923</a></div>
-      <div class="info-row">📧 <a href="mailto:aaroncommunication@gmail.com">aaroncommunication@gmail.com</a></div>
-    </div>
-
-    <!-- Cool Button to Services Page -->
-    <div style="text-align: center;">
-      <a href="services.html" class="services-btn">💼 View Our Services</a>
-    </div>
-
-    <div class="map-section">
-      <iframe src="https://www.google.com/maps/embed?pb=!4v1755262421189!6m8!1m7!1sOoHblsX-ubD6wuI_Vg8aLQ!2m2!1d8.517204939976896!2d76.95778360994343!3f248.04515971930053!4f-2.101672080886658!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <div class="map-link">
-        🌍 <a href="https://maps.app.goo.gl/w41uheG3TsaCGdxm7" target="_blank">View on Google Maps</a>
+      <div class="contact-info-grid">
+        <div class="info-item">
+          <span class="icon">📍</span>
+          <p>TC11/352 Keston Road, Near Style Plus, Thiruvananthapuram, Kerala 695003</p>
+        </div>
+        <div class="info-item">
+          <span class="icon">📞</span>
+          <p><a href="tel:+919895817923">+91 98958 17923</a></p>
+        </div>
+        <div class="info-item">
+          <span class="icon">📧</span>
+          <p><a href="mailto:aaroncommunication@gmail.com">aaroncommunication@gmail.com</a></p>
+        </div>
       </div>
+
+      <div class="button-section">
+        <a href="services.html" class="services-btn">View Our Services</a>
+      </div>
+
+      <div class="services-section">
+        <h2>Additional Services: Hilly Aqua Water</h2>
+        <p>Wholesale and retail options available. Contact us for bulk orders!</p>
+        <div class="service-contact">
+          <a href="tel:+919447017913">+91 94470 17913</a> / <a href="tel:+919400617913">+91 94006 17913</a>
+        </div>
+        <h3>Our Products</h3>
+        <ul>
+          <li>500 ML</li>
+          <li>1L</li>
+          <li>2L</li>
+          <li>5L</li>
+          <li>20L</li>
+        </ul>
+      </div>
+
+      <div class="map-section">
+        <h2>Find Us on the Map</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1755262421189!6m8!1m7!1sOoHblsX-ubD6wuI_Vg8aLQ!2m2!1d8.517204939976896!2d76.95778360994343!3f248.04515971930053!4f-2.101672080886658!5f0.7820865974627469" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-link">
+          <a href="https://maps.app.goo.gl/w41uheG3TsaCGdxm7" target="_blank">Open in Google Maps</a>
+        </div>
+      </div>
+
     </div>
 
     <footer>
-      &copy; 2025 Aaron Communications. All rights reserved.
+      © 2025 Aaron Communications. All rights reserved.
     </footer>
   </div>
 
