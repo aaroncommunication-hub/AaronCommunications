@@ -1,344 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- 
- <title>Aaron Communications</title>
- <style>
-   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+    <meta charset="UTF-8">
+    <title>Aaron Communications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00aaff;
+            --secondary-color: #00d2ff;
+            --background-color: #1c1c1c;
+            --card-background: #2a2a2a;
+            --text-color: #ffffff;
+            --light-text-color: #cccccc;
+        }
 
-   * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-   }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-   body {
-     font-family: 'Poppins', sans-serif;
-     background: #f0f2f5;
-     color: #333;
-     min-height: 100vh;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     padding: 40px;
-   }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
 
-   .container {
-     max-width: 900px;
-     width: 100%;
-     background: white;
-     border-radius: 20px;
-     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-     overflow: hidden;
-     display: flex;
-     flex-direction: column;
-     animation: fadeIn 1s ease;
-   }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #202020;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 1s ease;
+        }
 
-   .main-content {
-     display: flex;
-     flex-direction: column;
-     padding: 40px;
-     gap: 30px;
-   }
+        .main-content {
+            padding: 40px;
+            gap: 40px;
+            display: flex;
+            flex-direction: column;
+        }
 
-   .header {
-     display: flex;
-     align-items: center;
-     gap: 20px; /* Space between logo and text */
-     justify-content: center; /* Center content horizontally initially */
-     flex-direction: row; /* Ensure logo and text are in a row */
-     text-align: left; /* Align text to the left within the header */
-   }
-   .header img {
-     height: 50px; /* Adjust logo size as needed */
-   }
-   .header-text {
-     text-align: left; /* Ensure text within the text container is left-aligned */
-   }
-   .header-text h1 {
-     font-size: 2.8rem;
-     font-weight: 700;
-     color: #1a1a1a;
-     background: -webkit-linear-gradient(45deg, #007bff, #20a0ff);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     margin-bottom: 0; /* Adjust spacing */
-   }
-   .header-text p {
-     color: #888;
-     font-size: 1.1rem;
-     margin-top: 5px;
-   }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
 
-   .contact-info-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-     gap: 20px;
-   }
+        .header img {
+            height: 80px;
+            margin-bottom: 10px;
+        }
 
-   .info-item {
-     display: flex;
-     align-items: center;
-     gap: 15px;
-     padding: 20px;
-     background: #fafafa;
-     border: 1px solid #e0e0e0;
-     border-radius: 15px;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-   }
-   .info-item:hover {
-     transform: translateY(-5px);
-     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-   }
+        .header-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-   .info-item .icon {
-     font-size: 1.8rem;
-     color: #007bff;
-     flex-shrink: 0;
-   }
+        .header-text p {
+            font-size: 1.2rem;
+            color: var(--light-text-color);
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
 
-   .info-item p {
-     font-size: 1rem;
-     color: #555;
-     margin: 0;
-   }
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-   .info-item a {
-     color: #007bff;
-     text-decoration: none;
-     font-weight: 500;
-     transition: color 0.3s ease;
-   }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            background-color: var(--card-background);
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-   .info-item a:hover {
-     color: #0056b3;
-     text-decoration: underline;
-   }
+        .info-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
 
-   .button-section {
-     text-align: center;
-     margin-top: 10px;
-   }
+        .info-item .icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
 
-   .services-btn {
-     display: inline-block;
-     text-align: center;
-     background: linear-gradient(45deg, #007bff, #00d2ff);
-     color: white;
-     padding: 14px 35px;
-     font-size: 1.1rem;
-     font-weight: 600;
-     border-radius: 50px;
-     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
-     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-     text-decoration: none;
-   }
+        .info-item p {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            margin: 0;
+        }
 
-   .services-btn:hover {
-     transform: translateY(-3px);
-     box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
-     background: linear-gradient(45deg, #0056b3, #00a0ff);
-   }
+        .info-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-   /* New section styling for services and products */
-   .services-section {
-     margin-top: 30px;
-     padding: 30px;
-     background: #f8f9fa;
-     border-radius: 15px;
-     box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
-   }
-   .services-section h2 {
-     font-size: 1.8rem;
-     font-weight: 600;
-     text-align: center;
-     margin-bottom: 20px;
-     color: #1a1a1a;
-   }
-   .services-section p {
-     text-align: center;
-     color: #555;
-     margin-bottom: 15px;
-   }
-   .services-section ul {
-     list-style: none;
-     padding: 0;
-     text-align: center;
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 15px;
-   }
-   .services-section ul li {
-     font-size: 1rem;
-     color: #333;
-     background: #e9ecef;
-     padding: 8px 15px;
-     border-radius: 5px;
-     font-weight: 500;
-   }
-   .services-section .service-contact {
-     text-align: center;
-     margin-top: 20px;
-     font-size: 1.1rem;
-   }
-   .services-section .service-contact a {
-     color: #007bff;
-     text-decoration: none;
-     font-weight: 500;
-   }
-   .services-section .service-contact a:hover {
-     text-decoration: underline;
-   }
+        .info-item a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
 
-   .map-section {
-     margin-top: 30px;
-   }
+        .button-section {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-   .map-section h2 {
-     font-size: 1.5rem;
-     color: #1a1a1a;
-     margin-bottom: 15px;
-     text-align: center;
-   }
+        .services-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #007bff, #00d2ff);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
 
-   iframe {
-     width: 100%;
-     border-radius: 15px;
-     border: none;
-     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-   }
+        .services-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 123, 255, 0.4);
+        }
 
-   .map-link {
-     display: block;
-     margin-top: 15px;
-     text-align: center;
-     font-size: 0.95rem;
-   }
+        .services-section, .map-section {
+            background-color: var(--card-background);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-   .map-link a {
-     color: #007bff;
-     text-decoration: none;
-     font-weight: 500;
-     transition: color 0.3s ease;
-   }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        h3 {
+             font-size: 1.5rem;
+             text-align: center;
+             margin-top: 25px;
+             color: var(--light-text-color);
+        }
+        
+        .services-section p {
+            text-align: center;
+            color: var(--light-text-color);
+            margin-bottom: 15px;
+        }
+        
+        .service-contact {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .service-contact a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .service-contact a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .services-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .services-section ul li {
+            font-size: 1rem;
+            color: var(--background-color);
+            background: var(--light-text-color);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .map-section {
+            margin-top: 30px;
+        }
 
-   .map-link a:hover {
-     color: #0056b3;
-     text-decoration: underline;
-   }
+        iframe {
+            width: 100%;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-   footer {
-     padding: 20px;
-     text-align: center;
-     font-size: 0.9rem;
-     color: #888;
-     border-top: 1px solid #e0e0e0;
-     margin-top: 20px;
-   }
+        .map-link {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
 
-   @keyframes fadeIn {
-     from { opacity: 0; transform: translateY(20px); }
-     to { opacity: 1; transform: translateY(0); }
-   }
+        .map-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-   @media (max-width: 768px) {
-     body {
-       padding: 20px;
-     }
-     .main-content {
-       padding: 30px 20px;
-     }
-     .header {
-       flex-direction: column; /* Stack logo and text on smaller screens */
-       text-align: center;
-       align-items: center;
-     }
-     .header img {
-       width: 80px; /* Adjust logo size for smaller screens */
-       height: auto;
-     }
-     .header-text {
-       text-align: center;
-     }
-     .header-text h1 {
-       font-size: 2.2rem;
-     }
-     .header-text p {
-       font-size: 1rem;
-     }
-     .contact-info-grid {
-       grid-template-columns: 1fr;
-     }
-   }
- </style>
+        .map-link a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #333;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .header img {
+                height: 60px;
+            }
+            .header-text h1 {
+                font-size: 2.2rem;
+            }
+            .header-text p {
+                font-size: 1rem;
+            }
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
- <div class="container">
-   <div class="main-content">
+<div class="container">
+    <div class="main-content">
 
-     <header class="header">
-       <img src="logo.jpg" alt="Aaron Communications Logo">
-       <div class="header-text">
-         <h1>Welcome to Aaron Communications </h1>
-         <p>Since 1999</p>
-       </div>
-     </header>
+        <header class="header">
+            <img src="logo.jpg" alt="Aaron Communications Logo">
+            <div class="header-text">
+                <h1>Aaron Communications</h1>
+                <p>Since 1999</p>
+            </div>
+        </header>
 
-     <div class="contact-info-grid">
-       <div class="info-item">
-         <span class="icon">📍</span>
-         <p>TC11/352 Keston Road, Near Style Plus, Thiruvananthapuram, Kerala 695003</p>
-       </div>
-       <div class="info-item">
-         <span class="icon">📞</span>
-         <p><a href="tel:+919895817923">+91 98958 17923</a></p>
-       </div>
-       <div class="info-item">
-         <span class="icon">📧</span>
-         <p><a href="mailto:aaroncommunication@gmail.com">aaroncommunication@gmail.com</a></p>
-       </div>
-     </div>
+        <section class="contact-info-grid">
+            <div class="info-item">
+                <span class="icon">📍</span>
+                <p>TC11/352 Keston Road, Near Style Plus, Thiruvananthapuram, Kerala 695003</p>
+            </div>
+            <div class="info-item">
+                <span class="icon">📞</span>
+                <p><a href="tel:+919895817923">+91 98958 17923</a></p>
+            </div>
+            <div class="info-item">
+                <span class="icon">📧</span>
+                <p><a href="mailto:aaroncommunication@gmail.com">aaroncommunication@gmail.com</a></p>
+            </div>
+        </section>
 
-     <div class="button-section">
-       <a href="services.html" class="services-btn">View Our Services</a>
-     </div>
+        <section class="button-section">
+            <a href="services.html" class="services-btn">View Our Services</a>
+        </section>
 
-     <div class="services-section">
-       <h2>Additional Services: Hilly Aqua Water</h2>
-       <p>Wholesale and retail options available. Contact us for bulk orders!</p>
-       <div class="service-contact">
-         <a href="tel:+919447017913">+91 94470 17913</a> / <a href="tel:+919400617913">+91 94006 17913</a>
-       </div>
-       <h3>Our Products</h3>
-       <ul>
-         <li>500 ML</li>
-         <li>1L</li>
-         <li>2L</li>
-         <li>5L</li>
-         <li>20L</li>
-       </ul>
-     </div>
+        <section class="services-section">
+            <h2>Hilly Aqua Water</h2>
+            <p>Wholesale and retail options available. Contact us for bulk orders!</p>
+            <div class="service-contact">
+                <a href="tel:+919447017913">+91 94470 17913</a> / <a href="tel:+919400617913">+91 94006 17913</a>
+            </div>
+            <h3>Our Products</h3>
+            <ul>
+                <li>500 ML</li>
+                <li>1L</li>
+                <li>2L</li>
+                <li>5L</li>
+                <li>20L</li>
+            </ul>
+        </section>
 
-     <div class="map-section">
-       <h2>Find Us on the Map</h2>
-       <iframe src="https://www.google.com/maps/embed?pb=!4v1755262421189!6m8!1m7!1sOoHblsX-ubD6wuI_Vg8aLQ!2m2!1d8.517204939976896!2d76.95778360994343!3f248.04515971930053!4f-2.101672080886658!5f0.7820865974627469" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-       <div class="map-link">
-         <a href="https://maps.app.goo.gl/w41uheG3TsaCGdxm7" target="_blank">Open in Google Maps</a>
-       </div>
-     </div>
+        <section class="map-section">
+            <h2>Find Us on the Map</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1755262421189!6m8!1m7!1sOoHblsX-ubD6wuI_Vg8aLQ!2m2!1d8.517204939976896!2d76.95778360994343!3f248.04515971930053!4f-2.101672080886658!5f0.7820865974627469" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-link">
+                <a href="https://maps.app.goo.gl/w41uheG3TsaCGdxm7" target="_blank">Open in Google Maps</a>
+            </div>
+        </section>
 
-   </div>
+    </div>
 
-   <footer>
-     © 2025 Aaron Communications. All rights reserved.
-   </footer>
- </div>
+    <footer>
+        © 2025 Aaron Communications. All rights reserved.
+    </footer>
+</div>
 
 </body>
 </html>
